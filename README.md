@@ -1,2 +1,5 @@
-# cryptocore-official-api-docs
-Official Documentation for the CryptoCore APIs
+# Official Documentation for the CryptoCore APIs
+
+| Name | Description |
+| ------------ | ------------ |
+| [rest-api.md](./rest-api.md) | Details on the Rest API (/api) |
