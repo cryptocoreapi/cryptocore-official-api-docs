@@ -35,8 +35,9 @@ HTTP Request
 `GET /v1/data/exchanges`
 
 Output
+
 | Variable | Description |
-| :-- | :--: |
+| :--- | :--: |
 | exchange_id | Our exchange identifier |
 
 Output Example:
@@ -57,11 +58,13 @@ HTTP Request
 `GET /v1/data/symbols?exchange_id={exchange_id}`
 
 Parameters:
+
 | Parameter | Type | Description |
 | :-- | :--: | :--: |
 | exchange_id | string | Exchange identifier used to filter response. (optional) |
 
 Output:
+
 | Variable | Description |
 | :-- | :--: |
 | symbol_id | Our symbol identifier, format: `{base_coin}-{quoted-coin}-{exchange_id}` |
@@ -82,6 +85,7 @@ Output example:
 API calls described in this section are related to downloading OHLCV (Open, High, Low, Close, Volume) timeseries data. Each data point of this timeseries represents several indicators calculated from transactions activity inside a time range (period).
 
 ### List of Periods
+
 | Time unit | Period identificators |
 | :-- | :--: |
 | Minute | 1MIN, 5MIN, 15MIN, 30MIN |
@@ -95,6 +99,7 @@ HTTP Request
 `GET /v1/data/ohlcv/{symbol_id}/latest?period_id={period_id}&limit={limit}`
 
 Parameters
+
 | Parameter | Type | Description |
 | :-- | :--: | :-- |
 | symbol_id | string | Symbol identifier of requested timeseries |
@@ -102,6 +107,7 @@ Parameters
 | limit | int | Amount of items to return (optional, mininum is 1, maximum is 1000, default value is 100) |
 
 Output
+
 | Variable | Description |
 | :-- | :-- |
 | timestamp | Period starting time |
@@ -140,6 +146,7 @@ HTTP Request
 `GET /v1/data/ohlcv/{symbol_id}/history?period_id={period_id}&time_start={time_start}&time_end={time_end}`
 
 Parameters
+
 | Parameter | Type | Description |
 | :-- | :--: | :-- |
 | symbol_id | string | Symbol identifier of requested timeseries |
@@ -148,6 +155,7 @@ Parameters
 | time_end | timestring | Timeseries ending time (optional, if ncot supplied 100 elements will returned) |
 
 Output
+
 | Variable | Description |
 | :-- | :-- |
 | timestamp | Period starting time |
@@ -188,12 +196,14 @@ HTTP Request
 `GET /v1/data/trades/{symbol_id}/latest?limit={limit}`
 
 Parameters
+
 | Parameter | Type | Description |
 | :-- | :--: | :-- |
 | symbol_id | string | Symbol identifier |
 | limit | int | Amount of items to return (optional, mininum is 1, maximum is 1000, default value is 100 |
 
 Output
+
 | Variable | Description |
 | :-- | :-- |
 | timestamp | Time of trade reported by exchange |
@@ -220,11 +230,13 @@ HTTP Request
 `GET /v1/data/quotes/{symbol_id}/latest`
 
 Parameters
+
 | Parameter | Type | Description |
 | :-- | :--: | :-- |
 | symbol_id | string | Symbol identifier | 
 
 Output
+
 | Variable | Description |
 | :-- | :-- |
 | timestamp | Exchange time of order book |
@@ -257,11 +269,13 @@ HTTP Request
 `GET /v1/data/orderbooks/{symbol_id}/latest`
 
 Parameters
+
 | Parameter | Type | Description |
 | :-- | :--: | :-- |
 | symbol_id | string | Symbol identifier |
 
 Output
+
 | Variable | Description |
 | :-- | :-- |
 | timestamp | Exchange time of order book |
@@ -305,11 +319,13 @@ HTTP Request
 `GET /v1/account/balances/{exchange_id}/latest`
 
 Parameters
+
 | Parameter | Type | Description |
 | :-- | :--: | :-- |
 | exchange_id | string | Exchange identifier |
 
 Output
+
 | Variable | Description |
 | :-- | :-- |
 | currency | |
@@ -332,6 +348,7 @@ HTTP Request:
 `POST /v1/orders/{exchange_id}/{symbol_id}`
 
 Parameters:
+
 | Parameter | Type | Description |
 | :-- | :--: | :-- |
 | exchange_id | string | Exchange indentifier |
@@ -342,6 +359,7 @@ Parameters:
 | side | string | Order side ("BUY" or "SELL"). |
 
 Output:
+
 | Variable | Type | Description |
 | :-- | :--: | :-- |
 | order_id | string | Identifier of the order. |
@@ -375,6 +393,7 @@ HTTP Request:
 `DELETE /v1/orders/{exchange_id}/{symbol_id}/active/{order_id}`
 
 Parameters:
+
 | Parameter | Type | Description |
 | :-- | :--: | :-- |
 | exchange_id | string | Exchange identifier |
@@ -382,6 +401,7 @@ Parameters:
 | order_id | string | Identifier of the order to cancel. |
 
 Output:
+
 | Variable | Type | Description |
 | :-- | :--: | :-- |
 | order_id | string | Identifier of the order. |
@@ -416,12 +436,14 @@ HTTP Request:
 `GET /v1/orders/{exchange_id}/{order_id}`
 
 Parameters:
+
 | Parameter | Type | Description |
 | :-- | :--: | :-- |
 | exchange_id | string | Exchange identifier |
 | order_id | string | Identifier of the order to get. |
 
 Output:
+
 | Variable | Type | Description |
 | :-- | :--: | :-- |
 | order_id | string | Identifier of the order. |
@@ -455,11 +477,13 @@ HTTP Request:
 `GET /v1/orders/{exchange_id}/active`
 
 Parameters:
+
 | Parameter | Type | Description |
 | :-- | :--: | :-- |
 | exchange_id | string | Exchange identifier |
 
 Output:
+
 | Variable | Type | Description |
 | :-- | :--: | :-- |
 | order_id | string | Identifier of the order. |
@@ -493,6 +517,7 @@ HTTP Request:
 `GET /v1/orders/{exchange_id}/history?time_start={time_start}&time_end={time_end}&limit={limit}`
 
 Parameters:
+
 | Parameter | Type | Description |
 | :-- | :--: | :-- |
 | exchange_id | string | Exchange identifier |
@@ -501,6 +526,7 @@ Parameters:
 | limit | int | Amount of items to return (optional, minimum is 1, maximum is 1000, default value is 100). |
 
 Output:
+
 | Variable | Type | Description |
 | :-- | :--: | :-- |
 | order_id | string | Identifier of the order. |
